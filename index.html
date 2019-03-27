@@ -4,11 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="library/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="library/swiper/swiper.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+
 </head>
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,8 +49,141 @@
         </div>
       </nav>
 
+      <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+            <div>
+              <img src="img/angular7.jpg" width="300px" height="300px">
+            </div>
+              <div class="details">
+                <h3>Angularjs 7</h3>
+              </div>
+            </div>
+
+        <div class="swiper-slide">
+            <div>
+              <img src="img/nodejs.jpg" width="300px" height="300px">
+            </div>
+            <div class="details">
+              <h3>Nodejs</h3>
+            </div>
+            </div>
+      
+        <div class="swiper-slide">
+            <div>
+              <img src="img/npm.PNG" width="300px" height="300px">
+            </div>
+              <div class="details">
+                <h3>NPM</h3>
+              </div>
+            </div>
+      
+
+      <div class="swiper-slide">
+          <div>
+            <img src="img/C-sharp-logo.jpg" width="300px" height="300px">
+          </div>
+            <div class="details">
+              <h3>C#</h3>
+            </div>
+          </div>
+
+      
+
+        <div class="swiper-slide">
+          <div>
+            <img src="img/Java.png" width="300px" height="300px">
+            </div>
+              <div class="details">
+                  <h3>Java</h3>
+                </div>
+              </div>
+
+        <div class="swiper-slide">
+            <div>
+              <img src="img/sql.jpg" width="300px" height="300px">
+            </div>
+              <div class="details">
+                <h3>SQL server y SQL lite</h3>
+              </div>
+            </div>
+        
+        <div class="swiper-slide">
+            <div>
+              <img src="img/jquery-logo.png" width="300px" height="300px">
+            </div>
+              <div class="details">
+                <h3>Jquery</h3>
+              </div>
+            </div>
+
+        <div class="swiper-slide">
+            <div>
+              <img src="img/typescript.png" width="300px" height="300px">
+            </div>
+              <div class="details">
+                <h3>Typescript</h3>
+              </div>
+            </div>
+
+        <div class="swiper-slide">
+            <div>
+              <img src="img/js.png" width="300px" height="300px">
+            </div>
+              <div class="details">
+                <h3>Javascript</h3>
+              </div>
+            </div>
+          
+          <div class="swiper-slide">
+              <div>
+                <img src="img/css3.PNG" width="300px" height="300px">
+              </div>
+                <div class="details">
+                  <h3>CSS3</h3>
+                </div>
+              </div>
+    
+                  
+            <div class="swiper-slide">
+                <div>
+                  <img src="img/html.PNG" width="300px" height="300px">
+                </div>
+                  <div class="details">
+                  <h3>HTML</h3>
+                  </div>
+                </div>
+
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+    <script type="text/javascript" src="library/swiper/swiper.min.js"></script>
     <script src="library/Jquery/jquery-3.3.1.min.js"></script>
     <script src="library/popper/popper.min.js"></script>
     <script src="library/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows : true,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      });
+    </script>
+
 </body>
 </html>
