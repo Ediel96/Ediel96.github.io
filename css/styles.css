@@ -1,18 +1,22 @@
 body{
-    background: #3b3b3b;
+    background: #0e0e0e;
     font-family: sans-serif;
-    padding-top: 60px;
+    padding-top: 50px;
     transform: padding-top 0.5s ease;
 }
 
 p{
     margin-bottom: 2rem;
-    line-height: 2;
-    color: #7f8c8d;
+    line-height: 1.5;
+    color: #363636;
+}
+
+p b{
+    color: #0e0e0e;
 }
 
 .wrapper{
-    border-radius: 5px;
+    border-radius: 4px;
     background: #ffff;
     max-width: 950px;
     margin:0 auto;
