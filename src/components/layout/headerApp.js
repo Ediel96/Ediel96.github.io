@@ -2,12 +2,12 @@ import React from 'react';
 
 export const HeaderApp = () => {
     return (
-        <footer class="footer">
-        <p class="footer__title">Marlon</p>
-        <div class="footer__social">
-            <a href="#" class="footer__icon"><i class="bx bxl-facebook"></i></a>
-            <a href="#" class="footer__icon"><i class="bx bxl-instagram"></i></a>
-            <a href="#" class="footer__icon"><i class="bx bxl-twitter"></i></a>
+        <footer className ="footer">
+        <p className = "footer__title">Hamilton Acevedo</p>
+        <div className="footer__social">
+            <a href="#" className = "footer__icon"><i className = "bx bxl-facebook"></i></a>
+            <a href="#" className = "footer__icon"><i className = "bx bxl-instagram"></i></a>
+            <a href="#" className = "footer__icon"><i className = "bx bxl-twitter"></i></a>
         </div>
         <p>© 2020 copyright all right reserved</p>
     </footer>
