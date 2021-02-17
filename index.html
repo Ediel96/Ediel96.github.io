@@ -1,1 +1,284 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><title>React App</title><link href="/static/css/main.7d180cbf.chunk.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>!function(e){function r(r){for(var n,i,a=r[0],l=r[1],c=r[2],p=0,s=[];p<a.length;p++)i=a[p],Object.prototype.hasOwnProperty.call(o,i)&&o[i]&&s.push(o[i][0]),o[i]=0;for(n in l)Object.prototype.hasOwnProperty.call(l,n)&&(e[n]=l[n]);for(f&&f(r);s.length;)s.shift()();return u.push.apply(u,c||[]),t()}function t(){for(var e,r=0;r<u.length;r++){for(var t=u[r],n=!0,a=1;a<t.length;a++){var l=t[a];0!==o[l]&&(n=!1)}n&&(u.splice(r--,1),e=i(i.s=t[0]))}return e}var n={},o={1:0},u=[];function i(r){if(n[r])return n[r].exports;var t=n[r]={i:r,l:!1,exports:{}};return e[r].call(t.exports,t,t.exports,i),t.l=!0,t.exports}i.e=function(e){var r=[],t=o[e];if(0!==t)if(t)r.push(t[2]);else{var n=new Promise((function(r,n){t=o[e]=[r,n]}));r.push(t[2]=n);var u,a=document.createElement("script");a.charset="utf-8",a.timeout=120,i.nc&&a.setAttribute("nonce",i.nc),a.src=function(e){return i.p+"static/js/"+({}[e]||e)+"."+{3:"97ddbbf8"}[e]+".chunk.js"}(e);var l=new Error;u=function(r){a.onerror=a.onload=null,clearTimeout(c);var t=o[e];if(0!==t){if(t){var n=r&&("load"===r.type?"missing":r.type),u=r&&r.target&&r.target.src;l.message="Loading chunk "+e+" failed.\n("+n+": "+u+")",l.name="ChunkLoadError",l.type=n,l.request=u,t[1](l)}o[e]=void 0}};var c=setTimeout((function(){u({type:"timeout",target:a})}),12e4);a.onerror=a.onload=u,document.head.appendChild(a)}return Promise.all(r)},i.m=e,i.c=n,i.d=function(e,r,t){i.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},i.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(e,r){if(1&r&&(e=i(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(i.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var n in e)i.d(t,n,function(r){return e[r]}.bind(null,n));return t},i.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(r,"a",r),r},i.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},i.p="/",i.oe=function(e){throw console.error(e),e};var a=this["webpackJsonpediel-profile"]=this["webpackJsonpediel-profile"]||[],l=a.push.bind(a);a.push=r,a=a.slice();for(var c=0;c<a.length;c++)r(a[c]);var f=l;t()}([])</script><script src="/static/js/2.50515cd5.chunk.js"></script><script src="/static/js/main.05e44c96.chunk.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <!-- =====BOX ICONS===== -->
+        <!-- <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'> -->
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Portfolio website complete</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">Hamilton Acevedo</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active">Inicio</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">Perfil</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Habilidades</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link">Proyectos</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">Hola,<br>Mi nombre es <span class="home__title-color">Hamilton</span><br>soy Desarrollador web</h1>
+                </div>
+
+                <div class="home__social">
+                    <a href="https://www.linkedin.com/in/hamilton-acevedo-5b6990141/"><i class='bx bxl-linkedin'></i></a>
+                    <!-- <a href="https://www.linkedin.com/in/hamilton-acevedo-5b6990141/" class="home__social-icon"><i class='bx bxl-behance' ></i></a> -->
+                    <a href="https://github.com/Ediel96" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                </div>
+
+                <div class="home__img">    
+                    <img  class="images_home" src="assets/img/perfil-1.jpg" alt="">
+                </div>
+            </section>
+
+            <!--===== ABOUT =====-->
+            <section class="about section " id="about">
+                <h2 class="section-title">Perfil</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="assets/img/pefil-2.jpg" alt="">
+                    </div>
+                    
+                    <div>
+                        <h2 class="about__subtitle">Hamilton Acevedo</h2>
+                        <p class="about__text">Persona interesada en los conocimientos de tecnologías del desarrollo de software aplicado a  la agilidad para solucionar situaciones, junto al trabajo en equipo, buen desempeño y gran  facilidad en el entendimiento de conocimientos prácticos y teóricos del negocio.</p>           
+                    </div>                                   
+                </div>
+            </section>
+
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills">
+
+                <h2 class="section-title">Habilidades</h2>
+                
+                <div class="skills__container bd-grid">          
+                    
+                    <div>
+
+                        <h2 class="skills__subtitle">lenguaje de programación</h2>
+                        <!-- <p class="skills__text">En las tecnologia co</p> -->
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img class="img-icono" src="assets/img/icon/html-5.png">
+                                <span class="skills__name">html</span>
+                            </div>
+                            <div class="skills__bar skills__html">
+
+                            </div>
+                            <div>
+                                <span class="skills__percentage">95%</span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img class="img-icono" src="assets/img/icon/css-3.png">
+                                <span class="skills__name">CSS3</span>
+                            </div>
+                            <div class="skills__bar skills__css">
+
+                            </div>
+                            <div>
+                                <span class="skills__percentage">85%</span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img class="img-icono" src="assets/img/icon/javascript.png">
+                                <span class="skills__name">JS</span>
+                            </div>
+                            <div class="skills__bar skills__js">
+
+                            </div>
+                            <div>
+                                <span class="skills__percentage">65%</span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img class="img-icono" src="assets/img/icon/java.png">
+                                <span class="skills__name">Java</span>
+                            </div>
+                            <div class="skills__bar skills__js">
+
+                            </div>
+                            <div>
+                                <span class="skills__percentage">65%</span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img class="img-icono" src="assets/img/icon/new-php-logo.svg">
+                                <span class="skills__name"></span>
+                            </div>
+                            <div class="skills__bar skills__css"></div>
+                            <div>
+                                <span class="skills__percentage">85%</span>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    
+                    <div>
+
+                        <h2 class="skills__subtitle">Framework</h2>
+                        <!-- <p class="skills__text">En las tecnologia co</p> -->
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img class="img-icono" src="assets/img/icon/angular.png">
+                                <span class="skills__name">Angular</span>
+                            </div>
+                            <div class="skills__bar skills__css">
+
+                            </div>
+                            <div>
+                                <span class="skills__percentage">85%</span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img class="img-icono" src="assets/img/icon/spring-boot.svg">
+                                <span class="skills__name">spring boot</span>
+                            </div>
+                            <div class="skills__bar skills__js">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">65%</span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img class="img-icono" src="assets/img/icon/nodejs.png" alt="">
+                                <span class="skills__name">Nodejs y Express</span>
+                            </div>
+                            <div class="skills__bar skills__html">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">85%</span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img class="img-icono" src="assets/img/icon/github.jpg" alt="">
+                                <span class="skills__name">Git Hub y Git</span>
+                            </div>
+                            <div class="skills__bar skills__css">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">85%</span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img class="img-icono" src="assets/img/icon/laravel.png">
+                                <span class="skills__name">Laravel</span>
+                            </div>
+                            <div class="skills__bar skills__js"></div>
+                            <div>
+                                <span class="skills__percentage">65%</span>
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!--===== WORK =====-->
+            <!-- <section class="work section" id="work">
+                <h2 class="section-title">Work</h2>
+
+                <div class="work__container bd-grid">
+                    <div class="work__img">
+                        <img src="assets/img/work1.jpg" alt="">
+                    </div>
+                    <div class="work__img">
+                        <img src="assets/img/work2.jpg" alt="">
+                    </div>
+                    <div class="work__img">
+                        <img src="assets/img/work3.jpg" alt="">
+                    </div>
+                    <div class="work__img">
+                        <img src="assets/img/work4.jpg" alt="">
+                    </div>
+                    <div class="work__img">
+                        <img src="assets/img/work5.jpg" alt="">
+                    </div>
+                    <div class="work__img">
+                        <img src="assets/img/work6.jpg" alt="">
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- ===== CONTACT =====
+            <section class="contact section" id="contact">
+                <h2 class="section-title">Contact</h2>
+
+                <div class="contact__container bd-grid">
+                    <form action="" class="contact__form">
+                        <input type="text" placeholder="Name" class="contact__input">
+                        <input type="mail" placeholder="Email" class="contact__input">
+                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
+                        <input type="button" value="Enviar" class="contact__button button">
+                    </form>
+                </div>
+            </section> -->
+        </main>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <p class="footer__title">Hamilton Acevedo</p>
+            <div class="footer__social">
+                <!-- <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a> -->
+                <a href="https://www.instagram.com/hamilton_edi/" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                <a href="https://twitter.com/edi_hamilton" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+                <a class="footer__icon"  href="https://www.linkedin.com/in/hamilton-acevedo-5b6990141/"><i class='bx bxl-linkedin'></i></a>
+                <a class="footer__icon" href="https://github.com/Ediel96" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+            </div>
+            <p>&#169; 2021 Hamilton Acevedo</p>
+        </footer>
+
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
