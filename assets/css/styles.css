@@ -83,6 +83,13 @@ img{
   height: auto;
   display: block;
 }
+.img-icono{
+  width: 36px;
+}
+
+.img-icon{
+  width: 86px;
+}
 
 /*===== CLASS CSS ===== */
 .section-title{
