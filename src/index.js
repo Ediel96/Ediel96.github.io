@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-import './assets/style.css';
-import './assets/font/flaticon.css';
+
 
 ReactDOM.render(
   <React.StrictMode>

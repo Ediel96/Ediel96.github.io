@@ -1,31 +1,76 @@
-import React, { Component} from 'react';
-// import './style/Home.css';
-import {Link} from 'react-router-dom';
-import Particles from 'react-particles-js';
+import React from 'react';
+import './style/Home.css';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import registerIcons from "../core/components/fontawesome.js";
+import Particle from "../core/components/Particles";
+registerIcons();
 
 
+function Home() {
+    return (
+        <div className="App">
+      <div className="App-header">
+        <h1>Hamilton Ediel Acevedo</h1>
 
+        <h2>Developer</h2>
 
-export default class Home extends Component {
-    render() { 
+        <div>
+            <span className="bubble">
+                <a
+                href="https://github.com/{name}"
+                target="_blank " rel="noopener noreferrer" style = {{color:"#FFF"}}>
+                <FontAwesomeIcon
+                    className="icon"
+                    icon={["fab", "github"]}
+                    size="3x"
+                />
+                <span className="icon_title">Github</span>
+                </a>
+            </span>
 
-        const styles = {
-            root: {
-                fontFamily: "sans-serif",
-                textAlign: "center",
-                height: "100%",
-                background: "#222",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center"
-            }
-        };
-        
+            <span className="bubble">
+                <a href="https://www.linkedin.com/in/{name}/" 
+                target="_blank " rel="noopener noreferrer"  style = {{color:"#FFF"}}>
+                <FontAwesomeIcon
+                    className="icon"
+                    icon={["fab", "linkedin"]}
+                    size="3x"
+                />
+                <span className="icon_title">LinkedIn</span>
+                </a>
+            </span>
 
-        return ( 
-            <div style={styles.root}>
-                <Particles />
-            </div>
-        );
-    }
+            <span className="bubble">
+                <a href="resume.pdf" target="_blank " rel="noopener noreferrer" style = {{color:"#FFF"}}>
+                    <FontAwesomeIcon
+                    className="icon"
+                    icon={["fas", "file-alt"]}
+                    size="3x"
+                    />
+                    <span className="icon_title">Resume</span>
+                </a>
+            </span>
+
+            <span className="bubble">
+                <a href="mailto:h.amiltone.diel@gmail.com" target="_blank " rel="noopener noreferrer" style = {{color:"#FFF"}}>
+                    <FontAwesomeIcon
+                    className="icon"
+                    icon={["fas", "envelope"]}
+                    size="3x"
+                    />
+                    <span className="icon_title">Resume</span>
+                </a>
+            </span>
+        </div>
+
+        <h2 className="button-home"><Link to="/blog" style = {{color:"#FFF"}}>Ver mas</Link></h2> 
+
+    </div>
+
+    <Particle />
+    </div>
+    );
 }
+
+export default Home;
