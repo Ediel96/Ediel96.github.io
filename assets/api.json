@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "documentNumber": "4534634234",
+        "lastName": "Acevedo",
+        "firstName": "Hamilton",
+        "andress": "calle 57 ",
+        "dateOfBirth": "2021-04-14",
+        "typeDocument": {
+            "id": 1,
+            "name": "Cédula de ciudadanía"
+        },
+        "phone": "78278490"
+    },
+    {
+        "id": 2,
+        "documentNumber": "1004634231",
+        "lastName": "Avila",
+        "firstName": "Ediel",
+        "andress": "calle 100 ",
+        "dateOfBirth": "2021-04-12",
+        "typeDocument": {
+            "id": 2,
+            "name": "Cédula de extranjería"
+        },
+        "phone": "300827"
+    },
+    {
+        "id": 3,
+        "documentNumber": "1005674231",
+        "lastName": "Lopez",
+        "firstName": "Ana",
+        "andress": "calle 120 ",
+        "dateOfBirth": "2021-04-12",
+        "typeDocument": {
+            "id": 2,
+            "name": "Cédula de extranjería"
+        },
+        "phone": "100827"
+    }
+]
