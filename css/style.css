@@ -1,0 +1,26 @@
+:root {
+    --main-color-background: #2a2942;
+    --main-color-text: white;
+}
+
+body{
+    background: var(--main-color-background);
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    line-height: 1.7;
+}
+
+
+a, i, p, h1, h2, h3, h4, h5, h6 {
+    color: var(--main-color-text) !important;
+}
+
+span.copyright {
+    color: var(--main-color-text);
+}
+
+main.content {
+    margin-left: 290px;
+    transition: all .3s ease-in-out;
+}
