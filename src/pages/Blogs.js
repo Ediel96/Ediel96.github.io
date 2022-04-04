@@ -10,6 +10,7 @@ import Experience from '../core/components/Experiences'
 import Contact from '../core/components/Contact'
 
 
+import Skill from '../core/components/Skill.js';
 import '../assets/style/tooplate-style.css';
 
 class Blogs extends Component {
@@ -19,6 +20,7 @@ class Blogs extends Component {
                 <body className="dark-mode body-container">
                     <Navbar/>
                     <Profiler/>
+                    <Skill/>
                     <MyProjectMain/>
                     <Experience/>
                     <Contact/>
