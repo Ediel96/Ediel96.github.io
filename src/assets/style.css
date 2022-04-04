@@ -2,13 +2,6 @@
   text-align: center;
 }
 
-html,
-body {
-  margin: 0;
-  height: 100vh;
-  overflow: hidden;
-  background-color: #000;
-}
 
 .App-header {
   height: 100vh;

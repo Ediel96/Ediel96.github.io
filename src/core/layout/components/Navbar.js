@@ -1,7 +1,4 @@
 import React, {Component}from 'react';
-import {Link} from "react-router-dom";
-import gamer from '../../../assets/img/gamer.png';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import registerIcons from "../../components/fontawesome.js"
 import './Styles/Navbar.css';
 registerIcons();
@@ -9,38 +6,36 @@ registerIcons();
 class Navbar extends Component {
     render() { 
         return ( 
-            <nav  className="header_">
-                <div className="selection_ header-icons-container">
-                    <div className="icons">
-                        <Link to="/"><FontAwesomeIcon
-                            className="icon"
-                            icon={["fab", "github"]}
-                            size="3x"/>
-                        </Link>
+            <nav className="navbar navbar-expand-sm navbar-light headroom headroom--not-bottom headroom--pinned headroom--top">
+        <div className="container">
+            <a className="navbar-brand" href="index.html"><i className="uil uil-user"></i> Inicio </a>
 
-                        <Link to="/"><FontAwesomeIcon
-                            className="icon"
-                            icon={["fab", "twitter"]}
-                            size="3x"/>
-                        </Link>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+                <span className="navbar-toggler-icon"></span>
+                <span className="navbar-toggler-icon"></span>
+            </button>
 
-                        <Link to="/"><FontAwesomeIcon
-                            className="icon"
-                            icon={["fab", "linkedin"]}
-                            size="3x"/>
-                        </Link>
+            <div className="collapse navbar-collapse" id="navbarNav">
+                <ul className="navbar-nav mx-auto">
+                    <li className="nav-item">
+                        <a href="#about" className="nav-link"><span data-hover="About">About</span></a>
+                    </li>
+                    <li className="nav-item">
+                        <a href="#project" className="nav-link"><span data-hover="Projects">Projects</span></a>
+                    </li>
+                    <li className="nav-item">
+                        <a href="#resume" className="nav-link"><span data-hover="Resume">Resume</span></a>
+                    </li>
+                    <li className="nav-item">
+                        <a href="#contact" className="nav-link"><span data-hover="Contact">Contact</span></a>
+                    </li>
+                </ul>
 
-                    </div>
-                </div>
-                <div className="nav_">
-                    <div className="selection_ nav-logo-container">
-                        <Link to="/blog"> <img src={gamer} alt="Logo de mi blog"/> Mi blog</Link>
-                    </div>
-                    <div className="selection_ profile-link">
-                        <Link to="/my-skim">Sobre mi</Link>
-                    </div>
-                </div>
-            </nav>
+                
+            </div>
+        </div>
+    </nav>
         );
     }
 }
