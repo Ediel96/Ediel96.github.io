@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3824d5b1.css",
+    "main.js": "/static/js/main.cbaaa30c.js",
+    "static/media/profile.jpg": "/static/media/profile.c4953b00b2bf69aad193.jpg",
+    "static/media/spring-boot.png": "/static/media/spring-boot.69c7e3f21affab46c7ce.png",
+    "static/media/docker.jpg": "/static/media/docker.23a805c3c4c938bc2480.jpg",
+    "static/media/react2.png": "/static/media/react2.4127b36258b5e9dc8f88.png",
+    "static/media/angular.png": "/static/media/angular.edb02a7e13becdfc7ea8.png",
+    "static/media/node2.png": "/static/media/node2.85fedea58efe86438f00.png",
+    "static/media/python.png": "/static/media/python.461c1effab163e472fc7.png",
+    "static/media/javascript.png": "/static/media/javascript.0da836f30a742c199e43.png",
+    "static/media/java.png": "/static/media/java.f5dd86c3ef6ef3f85acf.png",
+    "static/media/Spring-MVC-AngularJS.webp": "/static/media/Spring-MVC-AngularJS.e05d779a43e1be65cd00.webp",
+    "static/media/css.png": "/static/media/css.463e319bad8e0edf1ef7.png",
+    "static/media/html.png": "/static/media/html.ff3cf75e3b7cbb4ea77c.png",
+    "index.html": "/index.html",
+    "main.3824d5b1.css.map": "/static/css/main.3824d5b1.css.map",
+    "main.cbaaa30c.js.map": "/static/js/main.cbaaa30c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3824d5b1.css",
+    "static/js/main.cbaaa30c.js"
+  ]
+}
