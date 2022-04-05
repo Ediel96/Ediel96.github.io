@@ -34,8 +34,8 @@ class MyProjectMain extends Component {
                             <div className="card" >
                               <div className="card-body">
                               <img className='card-img-top'  src={imagen1} alt="spring boot y angular proyecto personal"/>
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <h5 className="card-title">Registrar se usuario con lo autenticación de JWT.</h5>
+                                <p className="card-text">Es una aplicación con registro de usuarios donde se puede actualizar, agregar y eliminar y el backend este hecho en spring boot y el front en angular.</p>
                                 <a href="https://github.com/Ediel96/udemy_spring_boot_parcticando" className="btn btn-primary">Repositorio</a>
                               </div>
                             </div>
@@ -45,8 +45,8 @@ class MyProjectMain extends Component {
                               <div className="card" >
                                 <div className="card-body">
                                   <img className='card-img-top'  src={imagen2} alt="spring boot y angular proyecto personal"/>
-                                  <h5 className="card-title">Card title</h5>
-                                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <h5 className="card-title">Docker</h5>
+                                  <p className="card-text">Este proyecto tiene como objetivo un ambiente de contenedor hecho en Docker para el funcionamiento del backend con la base de datos en él, para realizar su respectivo servicio donde el usuario puede utilizarlo de la mejor manera.</p>
                                   <a href='https://github.com/Ediel96/Spring-bootApi-Udemy' className="btn btn-primary">Repositorio</a>
                                 </div>
                               </div>
