@@ -11,14 +11,14 @@ function Home() {
     return (
     <div className="App">
       <div className="App-header">
-        <h1>Hamilton Ediel Acevedo</h1>
+        <h1 className='text-titule'>Hamilton Ediel Acevedo</h1>
 
-        <h2>Developer</h2>
+        <h2 className='text-subtitule'>Developer</h2>
 
         <div>
             <span className="bubble">
                 <a
-                href="https://github.com/{name}"
+                href="https://github.com/Ediel96"
                 target="_blank " rel="noopener noreferrer" style = {{color:"#FFF"}}>
                 <FontAwesomeIcon
                     className="icon"
@@ -30,7 +30,7 @@ function Home() {
             </span>
 
             <span className="bubble">
-                <a href="https://www.linkedin.com/in/{name}/" 
+                <a href="https://www.linkedin.com/in/hamilton-acevedo-5b6990141/" 
                 target="_blank " rel="noopener noreferrer"  style = {{color:"#FFF"}}>
                 <FontAwesomeIcon
                     className="icon"
@@ -41,7 +41,7 @@ function Home() {
                 </a>
             </span>
 
-            <span className="bubble">
+            {/* <span className="bubble">
                 <a href="resume.pdf" target="_blank " rel="noopener noreferrer" style = {{color:"#FFF"}}>
                     <FontAwesomeIcon
                     className="icon"
@@ -61,7 +61,7 @@ function Home() {
                     />
                     <span className="icon_title">Resume</span>
                 </a>
-            </span>
+            </span> */}
         </div>
 
         <h2 className="button-home"><Link to="/blog" style = {{color:"#FFF"}}>Ver mas</Link></h2> 

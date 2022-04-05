@@ -19,16 +19,19 @@ class Navbar extends Component {
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav mx-auto">
                     <li className="nav-item">
-                        <a href="#about" className="nav-link"><span data-hover="About">About</span></a>
+                        <a href="#about" className="nav-link"><span data-hover="Sobre Mi">Sobre Mi</span></a>
                     </li>
                     <li className="nav-item">
-                        <a href="#project" className="nav-link"><span data-hover="Projects">Projects</span></a>
+                        <a href="#skill" className="nav-link"><span data-hover="Habilidades">Habilidades</span></a>
                     </li>
                     <li className="nav-item">
-                        <a href="#resume" className="nav-link"><span data-hover="Resume">Resume</span></a>
+                        <a href="#project" className="nav-link"><span data-hover="Proyectos">Proyectos</span></a>
                     </li>
                     <li className="nav-item">
-                        <a href="#contact" className="nav-link"><span data-hover="Contact">Contact</span></a>
+                        <a href="#resume" className="nav-link"><span data-hover="Experiencia">Experiencia</span></a>
+                    </li>
+                    <li className="nav-item">
+                        <a href="#contact" className="nav-link"><span data-hover="Contacto">Contacto</span></a>
                     </li>
                 </ul>
 
