@@ -14,7 +14,7 @@ class Profile extends Component {
                     <div className="about-text">
                         <small className="small-text">Bienvenido a <span className="mobile-block">mi portafolio!</span></small>
                         <h1 className="animated animated-text">
-                            <span className="mr-2">Yo soy desarrollado web.</span>
+                            <span className="mr-2">Yo soy desarrollador web.</span>
                                 <div className="animated-info">
                                     <span className="animated-item">Backend.</span>
                                     <span className="animated-item">Front-end.</span>
