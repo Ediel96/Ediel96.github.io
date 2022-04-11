@@ -83,7 +83,7 @@ class Skill extends Component {
 
                                     <div className='col-6'>
                                         <img className='img-w' src={imgSpring} alt='imgane de html'/>
-                                        <h5 className=''>Java</h5>
+                                        <h5 className=''>Spring Boot</h5>
                                         <p className=''>Intermedio</p>
                                     </div>
 
