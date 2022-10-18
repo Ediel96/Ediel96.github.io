@@ -1,15 +1,27 @@
+:root {
+  --color-primary :#292929;
+  --color-secod :aliceblue;
+}
+
+
+
+
 body{
-  background: #292929;
+  background: var(--color-primary);
 }
 
 strong {
-  color: aliceblue;
+  color: var(--color-secod);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: aliceblue;
+  color: var(--color-secod);
 }
 
 p{
-  color: aliceblue;
+  color: var(--color-secod);
+}
+
+a{
+  color: var(--color-secod);
 }
