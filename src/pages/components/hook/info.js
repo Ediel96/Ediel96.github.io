@@ -1,6 +1,7 @@
 export const briefcase = {
 
     info : {
+        name : 'Hamilton Acevedo',
         title : 'Yo soy desarrollador web.Backend.Front-end.',
         description : 'Me gusta los retos en los que como desarrollador web puede aprender cada día, conocer persona a la cuales pueda aprender de ellos, pienso que uno puede aprender de las personas no importa a que se dedique siempre teda de un punto de vista que uno no puede ver.'
     },
@@ -98,7 +99,10 @@ export const briefcase = {
             description:'Tecnología en Desarrollo Informático será capaz de planear, analizar, diseñar y desarrollar sistemas de información, mantener y configurar equipos de cómputo e implementar redes de computadores y gestionar Sistemas deTecnologías de la Información para aplicación comercial, industrial y de ingeniería que cumplan con los requerimientos delas organizaciones y los estándares internacionales.',
             year : 2018
         }
-    ]
-
+    ],
+    contact :{
+        name: 'Hamilton Acevedo',
+        email:'h.amiltone.diel@gmail.com'
+    }
 
 }
