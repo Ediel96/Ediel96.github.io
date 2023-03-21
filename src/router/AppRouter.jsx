@@ -1,8 +1,8 @@
 
 import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { Home } from '../pages/Home'
-import { Profile } from '../pages/Profile'
+import { Home } from '../pages/components/Home'
+import { Profile } from '../pages/components/Profile'
 
 export const AppRouter = () => {
   return (
