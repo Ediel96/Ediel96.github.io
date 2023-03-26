@@ -1,9 +1,13 @@
-export const briefcase = {
+import imgPerfil from  '../../../assets/eddi/img/pefil-platzi.jpg';
+
+export const profile = {
 
     info : {
         name : 'Hamilton Acevedo',
-        title : 'Yo soy desarrollador web.Backend.Front-end.',
-        description : 'Me gusta los retos en los que como desarrollador web puede aprender cada día, conocer persona a la cuales pueda aprender de ellos, pienso que uno puede aprender de las personas no importa a que se dedique siempre teda de un punto de vista que uno no puede ver.'
+        title : 'Yo soy desarrollador Full Stack',
+        description : 'Soy Ingeniero de sistemas con 4 años experiencia en el mundo desarrollo de la información, una persona apasionada por aprender tecnologías nuevas, me gustan los retos en donde puedo mejorar como persona y profesionalmente , soy full stack developer tengo experiencia con tecnologías como spring boot y angular.',
+        role : ["Back-end",  "Frond-end"],
+        img :imgPerfil
     },
     skills:{
         front:

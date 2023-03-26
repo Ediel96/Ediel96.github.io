@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../../../assets/img/header-img.svg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import TrackVisibility from 'react-on-screen';
 
-export const Banner = () => {
+export const Banner = ( {info} ) => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
@@ -54,10 +53,11 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Welcome to my Portfolio</span>
-                <h1>{`Hi! I'm Judy`} <span className="txt-rotate"  data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+                <span className="tagline">{info.name}</span>
+                {console.log()}
+                <h1>{info.title} <span className="txt-rotate"  data-rotate={info.role }><span className="wrap">{text}</span></span></h1>
+                  <p>{info.description}</p>
+                  {/* <button onClick={() => console.log('connect')}>Vamos a conectar <ArrowRightCircle size={25} /></button> */}
               </div>}
             </TrackVisibility>
           </Col>
@@ -65,7 +65,7 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img"/>
+                  <img src={info.img} alt="Header Img" className="img-prfile"/>
                 </div>}
             </TrackVisibility>
           </Col>
