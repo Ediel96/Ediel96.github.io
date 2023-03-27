@@ -1,7 +1,31 @@
 import imgPerfil from  '../../../assets/eddi/img/pefil-platzi.jpg';
 
-export const profile = {
+// icon front-end
+import imgHtml from '../../../assets/eddi/img/icon/html.png';
+import imgCss from '../../../assets/eddi/img/icon/css.png';
+import imgJavascript from  '../../../assets/eddi/img/icon/javascript.png';
+import imgAngular from '../../../assets/eddi/img/icon/angular2.png';
+import imgReact from '../../../assets/eddi/img/icon/react2.png';
 
+//icon back-end
+import imgPython from '../../../assets/eddi/img/icon/python.png';
+import imgNode from '../../../assets/eddi/img/icon/node2.png';
+import imgSpringBoot from  '../../../assets/eddi/img/icon/spring-boot.png';
+import imgJava from '../../../assets/eddi/img/icon/java.png'
+
+//img project
+import imgDocker from '../../../assets/eddi/img/project/docker.jpg';
+import imgSpringAngular from '../../../assets/eddi/img/project/Spring-MVC-AngularJS.png'
+
+//logo icon
+import logo from '../../../assets/eddi/img/logo.png';
+
+export const profile = {
+    social:{
+        linkedin: 'https://www.linkedin.com/in/hamilton-acevedo-5b6990141/',
+        github: 'https://github.com/Ediel96',
+    },
+    logo : logo,
     info : {
         name : 'Hamilton Acevedo',
         title : 'Yo soy desarrollador Full Stack',
@@ -10,74 +34,80 @@ export const profile = {
         img :imgPerfil
     },
     skills:{
-        front:
+        frontEnd:
         [
             {
                 title:'HTML', 
                 level:'Intermedio',
-                icon:''
+                icon: imgHtml
             },
             {
                 title:'CSS', 
                 level:'Intermedio',
-                icon:''
+                icon: imgCss
             },
             
             {
                 title:'Javascript', 
                 level:'Intermedio',
-                icon:''
+                icon: imgJavascript
             },
             {
                 title:'Angular', 
                 level:'Intermedio',
-                icon:''
+                icon: imgAngular
             },{
                 title:'React', 
                 level:'Basico',
-                icon:''
+                icon: imgReact
             },
                     
         ],
-        backend:[
+        backEnd:[
             {
                 title:'Python', 
                 level:'Basico',
-                icon:''
+                icon: imgPython
             },
             {
                 title:'Nodejs', 
                 level:'Intermedio',
-                icon:''
+                icon:imgNode
             },{
                 title:'Spring Boot', 
                 level:'Intermedio',
-                icon:''
+                icon:imgSpringBoot
             },{
-                title:'Spring Boot', 
+                title:'Java', 
                 level:'Intermedio',
-                icon:''
+                icon:imgJava
             },
         ]
     },
     projects:[
         {
+            id:1,
             title:'Registrar se usuario con lo autenticación de JWT.', 
             description: 'Es una aplicación con registro de usuarios donde se puede actualizar, agregar y eliminar y el backend este hecho en spring boot y el front en angular.',
-            link:'https://github.com/Ediel96/udemy_spring_boot_parcticando'
+            imgUrl: imgSpringAngular,
+            link:'https://github.com/Ediel96/udemy_spring_boot_parcticando',
+            linkView: ''
         },
         {
+            id:2,
             title:'Docker', 
+            imgUrl: imgDocker,
             description: 'Este proyecto tiene como objetivo un ambiente de contenedor hecho en Docker para el funcionamiento del backend con la base de datos en él, para realizar su respectivo servicio donde el usuario puede utilizarlo de la mejor manera.',
-            link:'https://github.com/Ediel96/Spring-bootApi-Udemy'
+            link:'https://github.com/Ediel96/Spring-bootApi-Udemy',
+            linkView: ''
         },
     ],
     experience:[
         {
-            title:'Analista de sistemas Junior',
+            title:'Analista de sistemas intermedio',
             location:'Asesoftware',
             description:'A lo largo de mi estadía en la empresa me ha permitido participar en dos proyectos dando me la oportunidad de aprender y mejorar mi experiencia en el desarrollo web en la tecnología como angular, spring boot y manejo de control de versiones.',
-            year : 2021
+            year : 2023
         },{
             title:'Desarrollador Web',
             location:'Spira',

@@ -54,10 +54,9 @@ export const Banner = ( {info} ) => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">{info.name}</span>
-                {console.log()}
+
                 <h1>{info.title} <span className="txt-rotate"  data-rotate={info.role }><span className="wrap">{text}</span></span></h1>
                   <p>{info.description}</p>
-                  {/* <button onClick={() => console.log('connect')}>Vamos a conectar <ArrowRightCircle size={25} /></button> */}
               </div>}
             </TrackVisibility>
           </Col>

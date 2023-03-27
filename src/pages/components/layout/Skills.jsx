@@ -7,7 +7,7 @@ import arrow1 from "../../../assets/img/arrow1.svg";
 import arrow2 from "../../../assets/img/arrow2.svg";
 import colorSharp from "../../../assets/img/color-sharp.png"
 
-export const Skills = () => {
+export const Skills = ({skills}) => {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -28,6 +28,8 @@ export const Skills = () => {
     }
   };
 
+  const listSkills = [skills];
+
   return (
     <section className="skill" id="skills">
         <div className="container">
@@ -35,25 +37,52 @@ export const Skills = () => {
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
                         <h2>Skills</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
-                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                            <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Web Development</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter2} alt="Image" />
-                                <h5>Brand Identity</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter3} alt="Image" />
-                                <h5>Logo Design</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Web Development</h5>
-                            </div>
-                        </Carousel>
+                        {
+                            listSkills.length === 0 ? (
+                                <p>no tiene contenido</p>
+                            ):(
+                            
+                                listSkills.map((skill, index) => {
+
+                                    return(
+                                        <div className="row" key={index}>
+                                            <div className="col-lg-6 col-12" >
+                                                <h3 className="mb-4">Back-end</h3>
+                                                <div className="row">
+                                                {
+                                                    skill.backEnd.map(( skills, id) => {
+                                                        return(
+                                                            <div className="col-6" key={id}>
+                                                                <img className="img-w" src={skills.icon} alt="" />
+                                                                <h5>{skills.title}</h5>
+                                                                <p>{skills.level}</p>
+                                                            </div>
+                                                        )
+                                                    })
+                                                }
+                                                </div> 
+                                            </div>
+                                            <div className="col-lg-6 col-12" >
+                                                <h3 className="mb-4">Front-end</h3>
+                                                <div className="row">
+                                                {
+                                                    skill.frontEnd.map(( skills, id) => {
+                                                        return(
+                                                            <div className="col-6" key={id}>
+                                                                <img className="img-w" src={skills.icon} alt="" />
+                                                                <h5>{skills.title}</h5>
+                                                                <p>{skills.level}</p>
+                                                            </div>
+                                                        )
+                                                    })
+                                                }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            )
+                        }
                     </div>
                 </div>
             </div>

@@ -23,6 +23,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color : #512353;
+  --second-color:  #0d0d10;
+  --bg-color: #121212e6;
+  --number-border: 15px; 
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
@@ -151,7 +158,7 @@ span.navbar-text {
 .social-icon a:hover img {
 	filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
 }
-.navbar-text button {
+.navbar-text button, button {
   font-weight: 700;
   color: #fff;
   border: 1px solid #fff;
@@ -162,10 +169,75 @@ span.navbar-text {
 	background-color: transparent;
 	transition: 0.3s ease-in-out;
 }
-.navbar-text button span {
+.img-w {
+  flex: 0 0 auto;
+  width: 60px;
+  padding: 10px;
+}
+.img-border{
+  border-radius: 15px;
+}
+
+.tex-center{
+  text-align: center;
+}
+.bg-card{
+  background: var(--bg-color);
+  border-radius: var(--number-border) 15px;
+}
+
+.timeline-wrapper {
+  position: relative;
+  padding: 22px 0;
+}
+.timeline-wrapper:last-child:before {
+  height: 0;
+}
+.timeline-wrapper:before {
+  content: "";
+  background: #474559;
+  width: 3px;
+  height: 100%;
+  position: absolute;
+  left: 38px;
+}
+
+.timeline-yr {
+  background: #474559;
+  border-radius: 100%;
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  line-height: 75px;
+  text-align: center;
+}
+.timeline-yr span {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  line-height: 75px;
+}
+
+.timeline-info {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 432px;
+  margin-left: 6em;
+}
+.timeline-info small {
+  color: #b51137;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+
+.navbar-text button span, button {
   z-index: 1;
 }
-.navbar-text button::before {
+.navbar-text button::before , button::before{
   content: "";
   width: 0%;
   height: 100%;
@@ -176,15 +248,17 @@ span.navbar-text {
   z-index: -1;
   transition: 0.3s ease-in-out;
 }
-.navbar-text button:hover {
+.navbar-text button:hover, button:hover {
   color: #121212;
 }
-.navbar-text button:hover::before {
+.navbar-text button:hover::before, button:hover::before {
 	content: "";
 	width: 100%;
 	height: 100%;
 	position: absolute;
 }
+
+
 nav.navbar .navbar-toggler:active,
 nav.navbar .navbar-toggler:focus {
 	outline: none;
@@ -350,6 +424,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 80px 0;
   position: relative;
   background-color: black;
+  background-image: url('./assets/eddi/img/space.jpg');
 }
 .project h2 {
 	font-size: 45px;
@@ -394,7 +469,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     position: absolute;
     width: 0;
     height: 100%;
-    background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+    background: linear-gradient(90.21deg, var(--primary-color) -5.91%, var(--second-color) 111.58%);
     top: 0;
     left: 0;
     z-index: -1;
@@ -426,7 +501,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .proj-imgbx::before {
   content: "";
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  background: linear-gradient(90.21deg, var(--primary-color) -5.91%, var(--second-color) 111.58%);
   opacity: 0.85;
   position: absolute;
   width: 100%;
@@ -473,7 +548,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Projects Css ************/
 .contact {
-  background: linear-gradient(90.21deg, #4936aa -5.91%, #0d0d10 111.58%);
+  background: linear-gradient(90.21deg, var(--primary-color) -5.91%, var(--second-color) 111.58%);
   padding: 60px 0 200px 0;
 }
 .contact img {
@@ -575,7 +650,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .new-email-bx::before {
   content: "";
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  background: linear-gradient(90.21deg, var(--primary-color) -5.91%, var(--second-color) 111.58%);
   border-radius: 20px;
   position: absolute;
   z-index: -1;
@@ -604,7 +679,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 0 15px;
 }
 .new-email-bx button {
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  background: linear-gradient(90.21deg, var(--primary-color) -5.91%, var(--second-color) 111.58%);
   padding: 20px 65px;
   color: #fff;
   font-weight: 500;
