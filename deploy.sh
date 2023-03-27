@@ -21,7 +21,7 @@ git add -A
 git commit -m 'deploy’ 
 
 # if you are deploying to https://<ediel96>.github.io 
-# git push -f git@github.con:<ediel96>/<ediel96>.github.i0.git main-dev
+git push -f git@github.con:<ediel96>/<ediel96>.github.i0.git main-dev
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO> 
 # git push - git@github.com:<USERNAME>/<REP0>.git main:gh-pages 
