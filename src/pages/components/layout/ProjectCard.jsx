@@ -1,25 +1,30 @@
 import { Col } from "react-bootstrap";
-import { HashLink } from 'react-router-hash-link';
+import { BoxArrowUpRight, Github } from "react-bootstrap-icons";
 
 export const ProjectCard = ({ title, description, imgUrl, link, linkView }) => {
 return (
-<Col size={12} sm={6} md={4}>
+<Col size={12} sm={6} lg={6}>
 
-<div className="card-body bg-card">
-    <img className="card-img-top border img-border" src={imgUrl}
+<div className="project-card">
+    <img className="project-card-img" src={imgUrl}
         alt="spring boot y angular proyecto personal"/>
-    <h5 className="card-title tex-center m-4">{title}</h5>
-    <p className="card-text tex-center">{description}</p>
-    <div className="row">
-        <HashLink to={link} className="co-12 m-2 d-flex justify-content-center">
-            <button className="vvd"><span>Repositorio</span></button>
-        </HashLink>
+    <div className="project-card-content">
+        <h5>{title}</h5>
+        <p>{description}</p>
+    </div>
+    <div className="project-actions">
+        <a href={link} target="_blank" rel="noreferrer">
+            <Github />
+            Repositorio
+        </a>
         {
-            linkView.length !== 0 ? (<HashLink to={linkView} className="co-12 m-2 d-flex justify-content-center">
-            <button className="vvd"><span>Ejemplo</span></button>
-            </HashLink>) : (<div></div> )
+            linkView.length !== 0 ? (
+                <a href={linkView} target="_blank" rel="noreferrer">
+                    <BoxArrowUpRight />
+                    Ejemplo
+                </a>
+            ) : null
         }
-        
     </div>
 </div>
 

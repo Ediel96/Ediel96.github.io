@@ -7,23 +7,25 @@ import imgSpringAngular from '../../../assets/eddi/img/project/Spring-MVC-Angula
 
 import TrackVisibility from 'react-on-screen';
 
+const TrackVisibilityBox = TrackVisibility.default || TrackVisibility;
+
 export const Projects = () => {
 
   const projects = [
     {
         id:1,
-        title:'Registrar se usuario con lo autenticación de JWT.', 
-        description: 'Es una aplicación con registro de usuarios donde se puede actualizar, agregar y eliminar y el backend este hecho en spring boot y el front en angular.',
+        title:'Microservicios bancarios', 
+        description: 'Desarrollo de servicios backend escalables con NestJS y Java bajo arquitectura hexagonal. Integracion con Salesforce, monitoreo con Dynatrace y despliegue en AWS con Docker, Kubernetes y Terraform.',
         imgUrl: imgSpringAngular,
-        link:'https://github.com/Ediel96/udemy_spring_boot_parcticando',
+        link:'https://github.com/Ediel96',
         linkView: ''
     },
     {
         id:2,
-        title:'Docker', 
+        title:'Arquitectura cloud y monitoreo', 
         imgUrl: imgDocker,
-        description: 'Este proyecto tiene como objetivo un ambiente de contenedor hecho en Docker para el funcionamiento del backend con la base de datos en él, para realizar su respectivo servicio donde el usuario puede utilizarlo de la mejor manera.',
-        link:'https://github.com/Ediel96/Spring-bootApi-Udemy',
+        description: 'Implementacion de despliegues en AWS utilizando contenedores y orquestacion. Analisis de logs, monitoreo de rendimiento y soporte de servicios criticos en entornos productivos.',
+        link:'https://github.com/Ediel96',
         linkView: ''
     },
 ]
@@ -33,16 +35,17 @@ export const Projects = () => {
       <Container>
         <Row>
           <Col size={12}>
-            <TrackVisibility>
+            <TrackVisibilityBox>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2 className="m-2">Projects</h2>
+                <span className="section-kicker">Proyectos</span>
+                <h2 className="m-2">Trabajo seleccionado</h2>
                 {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p> */}
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     
                     <Nav.Item>
-                      <Nav.Link eventKey="first">Tab 1</Nav.Link>
+                      <Nav.Link eventKey="first">Aplicaciones</Nav.Link>
                     </Nav.Item>
                     
                   </Nav>
@@ -66,7 +69,7 @@ export const Projects = () => {
                   </Tab.Content>
                 </Tab.Container>
               </div>}
-            </TrackVisibility>
+            </TrackVisibilityBox>
           </Col>
         </Row>
       </Container>

@@ -1,95 +1,66 @@
-
 import 'react-multi-carousel/lib/styles.css';
 import colorSharp from "../../../assets/img/color-sharp.png";
-
-// icon front-end
-import imgHtml from '../../../assets/eddi/img/icon/html.png';
-import imgCss from '../../../assets/eddi/img/icon/css.png';
-import imgJavascript from  '../../../assets/eddi/img/icon/javascript.png';
-import imgAngular from '../../../assets/eddi/img/icon/angular2.png';
-import imgReact from '../../../assets/eddi/img/icon/react2.png';
-
-//icon back-end
-import imgPython from '../../../assets/eddi/img/icon/python.png';
-import imgNode from '../../../assets/eddi/img/icon/node2.png';
-import imgSpringBoot from  '../../../assets/eddi/img/icon/spring-boot.png';
-import imgJava from '../../../assets/eddi/img/icon/java.png'
+import {
+    Braces,
+    Cloud,
+    CodeSlash,
+    Database,
+    Diagram3,
+    Git,
+    HddNetwork,
+    ShieldCheck,
+    Terminal,
+} from "react-bootstrap-icons";
 
 
 export const Skills = () => {
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5
+  const skillGroups = [
+    {
+      title: 'Backend',
+      icon: HddNetwork,
+      tools: 'Node.js · NestJS · Java 17/21 · Spring Boot · APIs REST · Microservicios · Arquitectura hexagonal',
     },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3
+    {
+      title: 'Frontend',
+      icon: CodeSlash,
+      tools: 'Angular · React · TypeScript · JavaScript · HTML · CSS',
     },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
+    {
+      title: 'Bases de datos',
+      icon: Database,
+      tools: 'MongoDB · PostgreSQL · Oracle · MySQL',
     },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
-  };
-
-  const skills = {
-        frontEnd:
-        [
-            {
-                title:'HTML', 
-                level:'Intermedio',
-                icon: imgHtml
-            },
-            {
-                title:'CSS', 
-                level:'Intermedio',
-                icon: imgCss
-            },
-            
-            {
-                title:'Javascript', 
-                level:'Intermedio',
-                icon: imgJavascript
-            },
-            {
-                title:'Angular', 
-                level:'Intermedio',
-                icon: imgAngular
-            },{
-                title:'React', 
-                level:'Basico',
-                icon: imgReact
-            },
-                    
-        ],
-        backEnd:[
-            {
-                title:'Python', 
-                level:'Basico',
-                icon: imgPython
-            },
-            {
-                title:'Nodejs', 
-                level:'Intermedio',
-                icon:imgNode
-            },{
-                title:'Spring Boot', 
-                level:'Intermedio',
-                icon:imgSpringBoot
-            },{
-                title:'Java', 
-                level:'Intermedio',
-                icon:imgJava
-            },
-        ]
-    }
-
-  const listSkills = [skills];
+    {
+      title: 'DevOps / Cloud',
+      icon: Cloud,
+      tools: 'AWS · Docker · Kubernetes · Terraform · OpenShift · Azure',
+    },
+    {
+      title: 'Calidad / Testing',
+      icon: ShieldCheck,
+      tools: 'Pruebas unitarias · Clean Code · Documentacion tecnica · Checkmarx',
+    },
+    {
+      title: 'Herramientas',
+      icon: Git,
+      tools: 'Git · Elastic Stack · Dynatrace · Scrum · Code Review',
+    },
+    {
+      title: 'Arquitectura',
+      icon: Diagram3,
+      tools: 'Microservicios · Arquitectura hexagonal · Sistemas escalables · Integracion de APIs',
+    },
+    {
+      title: 'Lenguajes',
+      icon: Braces,
+      tools: 'JavaScript · TypeScript · Java · SQL',
+    },
+    {
+      title: 'Operaciones',
+      icon: Terminal,
+      tools: 'Incidentes en produccion · Monitoreo · Analisis de logs · Optimizacion',
+    },
+  ];
 
   return (
     <section className="skill" id="skills">
@@ -97,53 +68,20 @@ export const Skills = () => {
             <div className="row">
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
-                        <h2>Skills</h2>
-                        {
-                            listSkills.length === 0 ? (
-                                <p>no tiene contenido</p>
-                            ):(
-                            
-                                listSkills.map((skill, index) => {
-
-                                    return(
-                                        <div className="row" key={index}>
-                                            <div className="col-lg-6 col-12" >
-                                                <h3 className="mb-4">Back-end</h3>
-                                                <div className="row">
-                                                {
-                                                    skill.backEnd.map(( skills, id) => {
-                                                        return(
-                                                            <div className="col-6" key={id}>
-                                                                <img className="img-w" src={skills.icon} alt="" />
-                                                                <h5>{skills.title}</h5>
-                                                                <p>{skills.level}</p>
-                                                            </div>
-                                                        )
-                                                    })
-                                                }
-                                                </div> 
-                                            </div>
-                                            <div className="col-lg-6 col-12" >
-                                                <h3 className="mb-4">Front-end</h3>
-                                                <div className="row">
-                                                {
-                                                    skill.frontEnd.map(( skills, id) => {
-                                                        return(
-                                                            <div className="col-6" key={id}>
-                                                                <img className="img-w" src={skills.icon} alt="" />
-                                                                <h5>{skills.title}</h5>
-                                                                <p>{skills.level}</p>
-                                                            </div>
-                                                        )
-                                                    })
-                                                }
-                                                </div>
-                                            </div>
-                                        </div>
-                                    )
-                                })
-                            )
-                        }
+                        <span className="section-kicker">Herramientas</span>
+                        <h2>Stack tecnico</h2>
+                        <p className="skill-intro">
+                            +7 anos creando aplicaciones empresariales, microservicios e integraciones para entornos bancarios y tecnologicos.
+                        </p>
+                        <div className="skills-grid">
+                            {skillGroups.map(({ title, tools, icon: Icon }) => (
+                                <article className="skill-card" key={title}>
+                                    <span className="skill-icon"><Icon /></span>
+                                    <h3>{title}</h3>
+                                    <p>{tools}</p>
+                                </article>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

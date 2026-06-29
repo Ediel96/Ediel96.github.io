@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { ArrowRightCircle } from 'react-bootstrap-icons';
 import TrackVisibility from 'react-on-screen';
 import imgPerfil from  '../../../assets/eddi/img/pefil-platzi.jpg';
 
+const TrackVisibilityBox = TrackVisibility.default || TrackVisibility;
 
 
 
@@ -17,10 +17,10 @@ export const Banner = () => {
   const period = 2000;
 
   const info = {
-    name : 'Hamilton Acevedo',
-    title : 'Yo soy desarrollador Full Stack',
-    description : 'Soy Ingeniero de sistemas con 4 años experiencia en el mundo desarrollo de la información, una persona apasionada por aprender tecnologías nuevas, me gustan los retos en donde puedo mejorar como persona y profesionalmente , soy full stack developer tengo experiencia con tecnologías como spring boot y angular.',
-    role : ["Back-End",  "Frond-End"],
+    name : 'Hamilton Acevedo Avila',
+    title : 'Desarrollador Full Stack',
+    description : 'Desarrollador Full Stack con +7 anos de experiencia creando aplicaciones empresariales y microservicios para sectores bancarios y tecnologicos. Especializado en Node.js, NestJS, Java y Spring Boot, con despliegues en AWS, Docker y Kubernetes.',
+    role : ["Node.js", "NestJS", "Spring Boot", "AWS"],
     img :imgPerfil
   }
 
@@ -62,25 +62,42 @@ export const Banner = () => {
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="aligh-items-center">
-          <Col xs={12} md={6} xl={7}>
-            <TrackVisibility>
+        <Row className="align-items-center g-5">
+          <Col xs={12} lg={5}>
+            <TrackVisibilityBox>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">{info.name}</span>
-
-                <h1>{info.title} <span className="txt-rotate"  data-rotate={info.role }><span className="wrap">{text}</span></span></h1>
+                <div className={isVisible ? "profile-card animate__animated animate__zoomIn" : "profile-card"}>
+                  <div className="profile-orbit profile-orbit-top"></div>
+                  <img src={info.img} alt={info.name} className="img-prfile"/>
+                  <h2>{info.name}</h2>
+                  <span className="profile-badge">Full Stack Developer</span>
                   <p>{info.description}</p>
-              </div>}
-            </TrackVisibility>
-          </Col>
-          <Col xs={12} md={6} xl={5}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={info.img} alt="Header Img" className="img-prfile"/>
+                  <div className="profile-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div className="profile-orbit profile-orbit-bottom"></div>
                 </div>}
-            </TrackVisibility>
+            </TrackVisibilityBox>
+          </Col>
+          <Col xs={12} lg={7}>
+            <TrackVisibilityBox>
+              {({ isVisible }) =>
+              <div className={isVisible ? "hero-copy animate__animated animate__fadeIn" : "hero-copy"}>
+                <span className="tagline">Portafolio personal</span>
+                <h1>
+                  {info.title}
+                  <span> {text}</span>
+                </h1>
+                <p>{info.description}</p>
+                <div className="hero-tools">
+                  {['Node.js', 'NestJS', 'Spring Boot', 'AWS', 'Kubernetes', 'Microservicios'].map((tool) => (
+                    <span key={tool}>{tool}</span>
+                  ))}
+                </div>
+              </div>}
+            </TrackVisibilityBox>
           </Col>
         </Row>
       </Container>

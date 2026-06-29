@@ -5,35 +5,35 @@ export const Experience = () => {
 
 const experience =[
     {
-        title:'Analista de sistemas intermedio',
-        location:'Asesoftware',
-        description:'A lo largo de mi estadía en la empresa me ha permitido participar en dos proyectos dando me la oportunidad de aprender y mejorar mi experiencia en el desarrollo web en la tecnología como angular, spring boot y manejo de control de versiones.',
-        year : 2023
+        title:'Full Stack Developer',
+        location:'Vass LATAM · Sector Bancario · Remoto',
+        description:'Disene y desarrolle microservicios escalables con NestJS y Java bajo arquitectura hexagonal. Integre servicios con Salesforce, implemente despliegues en AWS, contenedores con Docker, orquestacion con Kubernetes e infraestructura con Terraform. Tambien realice monitoreo con Dynatrace y Elastic Stack, soporte productivo y optimizacion de servicios criticos.',
+        year : '2023-2026'
     },{
-        title:'Desarrollador Web',
-        location:'Spira',
-        description:'En lo que estuve en el cargo de desarrollador web tuve grandes retos participar en un proyecto individuales manejando tecnología como php con laravel y angular para aplicación PWA.',
-        year : 2019
+        title:'Semi Senior Developer',
+        location:'Asesoftware · Sector Tecnologico · Remoto',
+        description:'Desarrolle aplicaciones empresariales con Spring Boot y Angular. Implemente y consumi APIs REST, disene soluciones basadas en microservicios, gestione bases de datos PostgreSQL, Oracle y PostGIS, y desplegue aplicaciones en Azure.',
+        year : '2021-2023'
     },{
-        title:'Aprendiz',
-        location:'Intergrupo',
-        description:'Me permitió aprender sobre el mundo del desarrollo donde conocí herramienta para el desarrollo de tecnología como Angular, Xamarin, .NetCore y React, donde me abrió a un mundo de tecnología y aprendizaje para mi futuro.',
-        year : 2018
+        title:'Junior Developer',
+        location:'Spira · Bogota',
+        description:'Desarrolle aplicaciones web y modulos frontend con Angular, implemente funcionalidades backend con Laravel, gestione bases de datos MySQL y participe en el desarrollo de aplicaciones tipo PWA.',
+        year : '2019-2020'
     }
 ]
 
 const education =[
     {
-        title:'Ingeneria de Sistemas',
-        location:'ECCI',
-        description:'Ingeniería de Sistemas fue diseñado para concebir, diseñar, implementar y operar sistemas y proyectos de TI basados en software, orientados a la solución de problemáticas específicas de los sectores públicos o privados, que demanden la implementación de alternativas de mejoramiento o producción de conocimiento frente a los procesos que desarrollan.',
-        year : 2021
+        title:'Ingenieria de Sistemas',
+        location:'ECCI · Bogota',
+        description:'Formacion orientada al diseno, implementacion y operacion de sistemas de informacion y proyectos de tecnologia basados en software.',
+        year : '2018-2021'
     },
     {
         title:'Tecnólogo en Desarrollo Informático',
-        location:'ECCI',
-        description:'Tecnología en Desarrollo Informático será capaz de planear, analizar, diseñar y desarrollar sistemas de información, mantener y configurar equipos de cómputo e implementar redes de computadores y gestionar Sistemas deTecnologías de la Información para aplicación comercial, industrial y de ingeniería que cumplan con los requerimientos delas organizaciones y los estándares internacionales.',
-        year : 2018
+        location:'ECCI · Bogota',
+        description:'Formacion tecnica en planeacion, analisis, diseno y desarrollo de sistemas de informacion para aplicaciones comerciales e industriales.',
+        year : '2015-2018'
     }
 ]
 
