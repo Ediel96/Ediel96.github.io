@@ -24,6 +24,7 @@ import {
   projects,
   skillGroups,
 } from './data/portfolio';
+import profileImage from '../../assets/img/profile.png';
 
 const iconMap = {
   architecture: Diagram3,
@@ -86,6 +87,13 @@ const HeroSection = () => (
   >
     <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
       <div className="rounded-lg bg-[#f7f4ef] p-7 text-carbon shadow-glow">
+        <div className="mb-7 overflow-hidden rounded-lg border border-carbon/10 bg-carbon/5">
+          <img
+            src={profileImage}
+            alt={`Foto de perfil de ${profile.name}`}
+            className="h-80 w-full scale-110 object-cover object-[38%_58%] sm:h-96 lg:h-[28rem]"
+          />
+        </div>
         <div className="mb-8 inline-flex rounded-full bg-gradient-to-br from-ember to-flame px-4 py-2 text-sm font-black text-white">
           {profile.role}
         </div>
