@@ -5,16 +5,18 @@ export default {
     extend: {
       colors: {
         ink: '#f7f4ef',
-        carbon: '#100f0e',
-        panel: '#1c1a18',
-        ember: '#ff6a00',
-        flame: '#ff2f12',
+        carbon: '#0e0e0e',
+        panel: '#141414',
+        ember: '#e53e3e',
+        flame: '#9b1c1c',
       },
       boxShadow: {
-        glow: '0 24px 80px rgba(255, 106, 0, 0.14)',
+        glow: '0 24px 80px rgba(229, 62, 62, 0.18)',
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['"Inter"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['"Space Grotesk"', 'ui-sans-serif', 'sans-serif'],
+        mono: ['"Space Mono"', 'ui-monospace', 'monospace'],
       },
     },
   },

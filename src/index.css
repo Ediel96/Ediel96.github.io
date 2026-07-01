@@ -2,17 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
+html { scroll-behavior: smooth; }
+
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  background: #0e0e0e;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Badge pulse dot */
+@keyframes blink {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+.badge-dot { animation: blink 2s infinite; }
+
+/* Orbit spin */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spin-slow { animation: spin-slow 8s linear infinite; }
+
+/* Profile card red dashed arc decorations */
+.profile-card-wrap {
+  position: relative;
+}
+.profile-card-wrap::before {
+  content: '';
+  position: absolute;
+  top: -18px; right: -18px;
+  width: 120px; height: 120px;
+  border: 2px dashed #e53e3e;
+  border-radius: 50%;
+  opacity: 0.35;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  transform: rotate(-30deg);
+  pointer-events: none;
+  z-index: 0;
+}
+.profile-card-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: -12px; left: -12px;
+  width: 70px; height: 70px;
+  border: 2px dashed #e53e3e;
+  border-radius: 50%;
+  opacity: 0.25;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(-30deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
-  
+}
