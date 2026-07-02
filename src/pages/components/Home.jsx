@@ -2,6 +2,34 @@ import { useEffect, useRef, useState } from 'react';
 import { contact, experience, navItems, profile, projects, stats, toolsGrid } from './data/portfolio';
 import profileImage from '../../assets/img/profile.png';
 
+// ── UI STRINGS ──
+const T = {
+  es: {
+    available: 'DISPONIBLE · REMOTO',
+    heroEyebrow: '// Full Stack Developer · Bogotá, Colombia',
+    cta1: '🚀 Ver proyectos', cta2: '📡 Contactar',
+    tools:   { eyebrow: '// 01 · Stack técnico', solid: 'PREMIUM',    ghost: 'TOOLS' },
+    exp:     { eyebrow: '// 02 · Trayectoria',   solid: 'EXPERIENCIA', ghost: 'LABORAL' },
+    proj:    { eyebrow: '// 03 · Proyectos',      solid: 'PROYECTOS',  ghost: 'DESTACADOS' },
+    contact: { eyebrow: '// 04 · Contacto', line1: "LET'S WORK", line2: 'TOGETHER',
+      desc: 'Disponible para proyectos remotos e híbridos. Experiencia en arquitecturas empresariales, microservicios y cloud. Listo para el próximo reto.' },
+    footer: '© 2026 · Hamilton Acevedo Ávila · Full Stack Developer · Bogotá, Colombia',
+    dock: ['Inicio', 'Stack', 'Exp.', 'Proyectos', 'Contacto'],
+  },
+  en: {
+    available: 'AVAILABLE · REMOTE',
+    heroEyebrow: '// Full Stack Developer · Bogotá, Colombia',
+    cta1: '🚀 View projects', cta2: '📡 Contact me',
+    tools:   { eyebrow: '// 01 · Tech stack',  solid: 'PREMIUM',    ghost: 'TOOLS' },
+    exp:     { eyebrow: '// 02 · Career',       solid: 'EXPERIENCE', ghost: 'HISTORY' },
+    proj:    { eyebrow: '// 03 · Work',         solid: 'FEATURED',   ghost: 'PROJECTS' },
+    contact: { eyebrow: '// 04 · Contact', line1: "LET'S WORK", line2: 'TOGETHER',
+      desc: 'Available for remote and hybrid projects. Experience in enterprise architectures, microservices and cloud. Ready for the next challenge.' },
+    footer: '© 2026 · Hamilton Acevedo Ávila · Full Stack Developer · Bogotá, Colombia',
+    dock: ['Home', 'Stack', 'Exp.', 'Projects', 'Contact'],
+  },
+};
+
 // ── STARFIELD ──
 const Starfield = () => {
   const ref = useRef(null);
@@ -102,7 +130,7 @@ const NavIcon = ({ icon }) => {
 };
 
 // ── FLOATING NAV ──
-const FloatingNav = ({ active }) => (
+const FloatingNav = ({ active, lang, onToggle }) => (
   <nav className="fixed inset-x-0 top-5 z-50 flex justify-center px-4">
     <div
       className="flex items-center gap-0.5 rounded-2xl border border-white/8 px-3 py-2 shadow-2xl shadow-black/30 backdrop-blur-2xl"
@@ -122,10 +150,18 @@ const FloatingNav = ({ active }) => (
             }`}
           >
             <NavIcon icon={icon} />
-            <span className="font-mono text-[0.6rem] uppercase tracking-[0.5px]">{label}</span>
+            <span className="font-mono text-[0.6rem] uppercase tracking-[0.5px]">{label[lang]}</span>
           </a>
         );
       })}
+      <div className="mx-1 w-px h-5 bg-white/10 self-center" />
+      <button
+        onClick={onToggle}
+        className="rounded-lg border border-white/15 px-2.5 py-1 font-mono text-[0.65rem] font-bold tracking-wider transition hover:border-ember hover:text-ember"
+        style={{ color: 'rgba(255,255,255,0.5)' }}
+      >
+        {lang === 'es' ? 'EN' : 'ES'}
+      </button>
     </div>
   </nav>
 );
@@ -161,10 +197,17 @@ const SectionHead = ({ eyebrow, solid, ghost }) => (
 );
 
 // ── HERO ──
-const HeroSection = () => (
-  <section id="home" className="relative z-10 min-h-screen grid grid-cols-1 lg:grid-cols-[320px_1fr] items-stretch">
-    {/* Profile column */}
-    <div className="flex flex-col items-center justify-center p-8 lg:sticky lg:top-20 lg:h-[calc(100vh-5rem)] lg:self-start">
+const HeroSection = ({ lang }) => (
+  <section id="home" className="relative z-10">
+    <div
+      className="mx-auto flex max-w-[1020px] flex-col lg:flex-row lg:items-stretch lg:justify-center"
+      style={{ minHeight: 'calc(100vh - 5rem)' }}
+    >
+    {/* Profile column — right on desktop, first on mobile */}
+    <div
+      className="lg:order-2 lg:w-[320px] lg:shrink-0 lg:sticky lg:top-20 flex items-center justify-center p-8 lg:p-4"
+      style={{ height: 'calc(100vh - 5rem)' }}
+    >
       <div className="profile-card-wrap">
         <div
           className="relative w-full max-w-[290px] rounded-3xl border border-white/8 p-6 text-center shadow-2xl shadow-black/50"
@@ -192,12 +235,11 @@ const HeroSection = () => (
           </div>
 
           <p className="font-display text-[1.2rem] font-bold text-white mb-2">{profile.name}</p>
-          <p className="text-[0.8rem] leading-[1.55] mb-5" style={{ color: 'rgba(255,255,255,0.55)' }}>{profile.bio}</p>
+          <p className="text-[0.8rem] leading-[1.55] mb-5" style={{ color: 'rgba(255,255,255,0.55)' }}>{profile.bio[lang]}</p>
 
           <div className="flex justify-center gap-2.5 mb-5">
             {[
               { href: profile.github, label: '🐙', external: true },
-              { href: `tel:${profile.phone}`, label: '📞', external: false },
               { href: '#contact', label: '📡', external: false },
               { href: '#projects', label: '🚀', external: false },
             ].map(({ href, label, external }) => (
@@ -215,25 +257,26 @@ const HeroSection = () => (
             ))}
           </div>
 
-          <span className="inline-flex items-center gap-2 rounded-full border border-ember/20 bg-ember/8 px-3.5 py-1.5 font-mono text-[0.68rem] tracking-widest text-ember">
+          <span className="inline-flex items-center gap-2 rounded-full border border-ember/20 bg-ember/8 px-3 py-1.5 font-mono text-[0.62rem] tracking-wider text-ember whitespace-nowrap">
             <span className="badge-dot h-1.5 w-1.5 rounded-full bg-green-400" />
-            DISPONIBLE · REMOTO / HIBRIDO
+            {T[lang].available}
           </span>
         </div>
       </div>
     </div>
 
-    {/* Hero text column */}
+    {/* Hero text column — left on desktop, second on mobile */}
     <div
-      className="flex flex-col justify-center border-t border-white/5 px-8 pt-20 pb-32 lg:border-l lg:border-t-0 lg:px-14"
+      className="lg:order-1 flex flex-col justify-center border-t border-white/5 px-8 py-16 pb-28 lg:w-[660px] lg:shrink-0 lg:border-r lg:border-t-0 lg:px-10 lg:py-0 lg:pb-8 xl:w-[680px]"
+      style={{ height: 'calc(100vh - 5rem)' }}
     >
       <p className="mb-4 font-mono text-[0.72rem] tracking-[3px] text-ember" style={{ opacity: 0.85 }}>
-        // Full Stack Developer · Bogotá, Colombia
+        {T[lang].heroEyebrow}
       </p>
 
       <h1 className="font-display leading-none tracking-[-2px] mb-0">
-        <span className="block font-black text-white" style={{ fontSize: 'clamp(3.5rem, 8vw, 7rem)' }}>FULL</span>
-        <span className="block font-black text-white" style={{ fontSize: 'clamp(3.5rem, 8vw, 7rem)' }}>STACK</span>
+        <span className="block font-black text-white" style={{ fontSize: 'clamp(3rem, 6vw, 6rem)' }}>FULL</span>
+        <span className="block font-black text-white" style={{ fontSize: 'clamp(3rem, 6vw, 6rem)' }}>STACK</span>
         <span
           className="block font-black"
           style={{ fontSize: 'clamp(3.5rem, 8vw, 7rem)', color: 'transparent', WebkitTextStroke: '2px rgba(255,255,255,0.15)' }}
@@ -244,11 +287,11 @@ const HeroSection = () => (
 
       <div className="my-8 h-[3px] w-12 rounded-full bg-ember" />
 
-      <p className="max-w-[480px] text-[0.95rem] leading-[1.8] mb-10" style={{ color: 'rgba(255,255,255,0.55)' }}>
-        {profile.specialty}
+      <p className="max-w-[480px] text-[0.95rem] leading-[1.8] mb-6" style={{ color: 'rgba(255,255,255,0.55)' }}>
+        {profile.specialty[lang]}
       </p>
 
-      <div className="flex flex-wrap gap-4 mb-12">
+      <div className="flex flex-wrap gap-4 mb-8">
         <a
           href="#projects"
           className="inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-semibold text-white no-underline transition hover:-translate-y-0.5"
@@ -256,35 +299,36 @@ const HeroSection = () => (
           onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 0 44px rgba(229,62,62,0.55)'; }}
           onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 0 28px rgba(229,62,62,0.35)'; }}
         >
-          🚀 Ver proyectos
+          {T[lang].cta1}
         </a>
         <a
           href="#contact"
           className="inline-flex items-center gap-2 rounded-full border border-white/12 px-7 py-3 text-sm font-semibold no-underline transition hover:bg-white/5 hover:border-white/25 hover:-translate-y-0.5"
           style={{ color: 'rgba(255,255,255,0.7)' }}
         >
-          📡 Contactar
+          {T[lang].cta2}
         </a>
       </div>
 
       {/* Stats */}
       <div className="flex flex-wrap gap-10 border-t pt-8" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
         {stats.map(({ num, label }) => (
-          <div key={label}>
+          <div key={num}>
             <span className="block font-display text-[2rem] font-bold leading-none text-ember">{num}</span>
-            <span className="mt-1 block font-mono text-[0.72rem] tracking-[1px]" style={{ color: 'rgba(255,255,255,0.35)' }}>{label}</span>
+            <span className="mt-1 block font-mono text-[0.72rem] tracking-[1px]" style={{ color: 'rgba(255,255,255,0.35)' }}>{label[lang]}</span>
           </div>
         ))}
       </div>
+    </div>
     </div>
   </section>
 );
 
 // ── TOOLS ──
-const ToolsSection = () => (
+const ToolsSection = ({ lang }) => (
   <section id="tools" className="relative z-10 py-20" style={{ background: '#141414' }}>
     <div className="mx-auto max-w-[1100px] px-8 lg:px-10">
-      <SectionHead eyebrow="// 01 · Stack técnico" solid="PREMIUM" ghost="TOOLS" />
+      <SectionHead eyebrow={T[lang].tools.eyebrow} solid={T[lang].tools.solid} ghost={T[lang].tools.ghost} />
       <div
         className="reveal grid overflow-hidden rounded-2xl"
         style={{
@@ -310,7 +354,7 @@ const ToolsSection = () => (
             </div>
             <div>
               <h4 className="font-display text-[0.95rem] font-semibold text-white mb-0.5">{name}</h4>
-              <p className="text-[0.75rem]" style={{ color: 'rgba(255,255,255,0.35)' }}>{desc}</p>
+              <p className="text-[0.75rem]" style={{ color: 'rgba(255,255,255,0.35)' }}>{desc[lang]}</p>
             </div>
           </div>
         ))}
@@ -320,10 +364,10 @@ const ToolsSection = () => (
 );
 
 // ── EXPERIENCE ──
-const ExperienceSection = () => (
+const ExperienceSection = ({ lang }) => (
   <section id="experience" className="relative z-10 py-20">
     <div className="mx-auto max-w-[1100px] px-8 lg:px-10">
-      <SectionHead eyebrow="// 02 · Trayectoria" solid="EXPERIENCIA" ghost="LABORAL" />
+      <SectionHead eyebrow={T[lang].exp.eyebrow} solid={T[lang].exp.solid} ghost={T[lang].exp.ghost} />
       <div className="flex flex-col gap-5">
         {experience.map((item) => (
           <div
@@ -347,7 +391,7 @@ const ExperienceSection = () => (
             </div>
 
             <ul className="space-y-1.5 pl-4 list-disc">
-              {item.bullets.map((b, i) => (
+              {item.bullets[lang].map((b, i) => (
                 <li key={i} className="text-[0.82rem]" style={{ color: 'rgba(255,255,255,0.5)' }}>{b}</li>
               ))}
             </ul>
@@ -359,10 +403,10 @@ const ExperienceSection = () => (
 );
 
 // ── PROJECTS ──
-const ProjectsSection = () => (
+const ProjectsSection = ({ lang }) => (
   <section id="projects" className="relative z-10 py-20" style={{ background: '#141414' }}>
     <div className="mx-auto max-w-[1100px] px-8 lg:px-10">
-      <SectionHead eyebrow="// 03 · Proyectos" solid="PROYECTOS" ghost="DESTACADOS" />
+      <SectionHead eyebrow={T[lang].proj.eyebrow} solid={T[lang].proj.solid} ghost={T[lang].proj.ghost} />
       <div className="reveal grid gap-5" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
         {projects.map((p) => (
           <div
@@ -375,8 +419,8 @@ const ProjectsSection = () => (
             <div className="h-1.5" style={{ background: p.gradient }} />
             <div className="p-7">
               <div className="mb-4 text-[2rem]">{p.emoji}</div>
-              <p className="font-display font-semibold text-white mb-2">{p.title}</p>
-              <p className="text-[0.8rem] leading-[1.6] mb-5" style={{ color: 'rgba(255,255,255,0.45)' }}>{p.desc}</p>
+              <p className="font-display font-semibold text-white mb-2">{p.title[lang]}</p>
+              <p className="text-[0.8rem] leading-[1.6] mb-5" style={{ color: 'rgba(255,255,255,0.45)' }}>{p.desc[lang]}</p>
               <div className="flex flex-wrap gap-1.5">
                 {p.tags.map(t => <Tag key={t.label} {...t} />)}
               </div>
@@ -389,45 +433,37 @@ const ProjectsSection = () => (
 );
 
 // ── CONTACT ──
-const ContactSection = () => (
+const ContactSection = ({ lang }) => (
   <section id="contact" className="relative z-10 py-20">
     <div className="mx-auto max-w-[1100px] px-8 lg:px-10">
       <div className="reveal">
-        <p className="font-mono text-[0.68rem] tracking-[3px] text-ember opacity-80 mb-8">// 04 · Contacto</p>
+        <p className="font-mono text-[0.68rem] tracking-[3px] text-ember opacity-80 mb-8">{T[lang].contact.eyebrow}</p>
         <div className="leading-none tracking-[-2px] mb-8">
           <span
             className="block font-display font-black text-white"
             style={{ fontSize: 'clamp(3rem, 6vw, 6rem)' }}
           >
-            LET&apos;S WORK
+            {T[lang].contact.line1}
           </span>
           <span
             className="block font-display font-black"
             style={{ fontSize: 'clamp(3rem, 6vw, 6rem)', color: 'transparent', WebkitTextStroke: '2px rgba(255,255,255,0.1)' }}
           >
-            TOGETHER
+            {T[lang].contact.line2}
           </span>
         </div>
         <p className="text-[0.9rem] leading-[1.7] max-w-[480px] mb-8" style={{ color: 'rgba(255,255,255,0.4)' }}>
-          Disponible para proyectos remotos e híbridos. Experiencia en arquitecturas empresariales,
-          microservicios y cloud. Listo para el próximo reto.
+          {T[lang].contact.desc}
         </p>
         <div className="flex flex-wrap gap-4">
-          <a
-            href={`tel:${contact.phone}`}
-            className="inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-semibold text-white no-underline transition hover:-translate-y-0.5"
-            style={{ background: '#e53e3e', boxShadow: '0 0 28px rgba(229,62,62,0.35)' }}
-            onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 0 44px rgba(229,62,62,0.55)'; }}
-            onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 0 28px rgba(229,62,62,0.35)'; }}
-          >
-            📞 {contact.phone}
-          </a>
           <a
             href={contact.githubUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-white/12 px-7 py-3 text-sm font-semibold no-underline transition hover:bg-white/5 hover:border-white/25 hover:-translate-y-0.5"
-            style={{ color: 'rgba(255,255,255,0.7)' }}
+            className="inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-semibold text-white no-underline transition hover:-translate-y-0.5"
+            style={{ background: '#e53e3e', boxShadow: '0 0 28px rgba(229,62,62,0.35)' }}
+            onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 0 44px rgba(229,62,62,0.55)'; }}
+            onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 0 28px rgba(229,62,62,0.35)'; }}
           >
             🐙 {contact.github}
           </a>
@@ -438,12 +474,12 @@ const ContactSection = () => (
 );
 
 // ── MACOS DOCK ──
-const DOCK_NAV = [
-  { label: 'Inicio', emoji: '🏠', from: '#1a0a00', to: '#5c1500', href: '#home' },
-  { label: 'Stack', emoji: '⚡', from: '#0f1a00', to: '#1a4000', href: '#tools' },
-  { label: 'Exp.', emoji: '📋', from: '#001a0f', to: '#003320', href: '#experience' },
-  { label: 'Proyectos', emoji: '🚀', from: '#1a001a', to: '#3a004f', href: '#projects' },
-  { label: 'Contacto', emoji: '📡', from: '#1a0800', to: '#5c1500', href: '#contact' },
+const DOCK_NAV_BASE = [
+  { emoji: '🏠', from: '#1a0a00', to: '#5c1500', href: '#home' },
+  { emoji: '⚡', from: '#0f1a00', to: '#1a4000', href: '#tools' },
+  { emoji: '📋', from: '#001a0f', to: '#003320', href: '#experience' },
+  { emoji: '🚀', from: '#1a001a', to: '#3a004f', href: '#projects' },
+  { emoji: '📡', from: '#1a0800', to: '#5c1500', href: '#contact' },
 ];
 const DOCK_TECH = [
   { label: 'Node.js', node: <span className="font-mono text-[0.55rem] font-bold text-green-400">NODE</span>, from: '#0a1a00', to: '#14420a' },
@@ -455,8 +491,9 @@ const DOCK_TECH = [
   { label: 'React · Angular', emoji: '⚛️', from: '#001018', to: '#003040' },
 ];
 
-const Dock = () => {
+const Dock = ({ lang }) => {
   const [hoverIdx, setHoverIdx] = useState(-1);
+  const DOCK_NAV = DOCK_NAV_BASE.map((item, i) => ({ ...item, label: T[lang].dock[i] }));
 
   const navCount = DOCK_NAV.length;
   const techCount = DOCK_TECH.length;
@@ -545,33 +582,36 @@ const Dock = () => {
 };
 
 // ── FOOTER ──
-const Footer = () => (
+const Footer = ({ lang }) => (
   <footer
     className="relative z-10 border-t px-10 pb-24 pt-8 text-center font-mono text-[0.65rem] tracking-[1px]"
     style={{ borderColor: 'rgba(255,255,255,0.04)', color: 'rgba(255,255,255,0.2)' }}
   >
-    © 2026 · Hamilton Acevedo Ávila · Full Stack Developer · Bogotá, Colombia
+    {T[lang].footer}
   </footer>
 );
 
 // ── ROOT ──
 export const Home = () => {
   const active = useActiveSection();
+  const [lang, setLang] = useState('es');
   useScrollReveal();
+
+  const toggleLang = () => setLang(l => l === 'es' ? 'en' : 'es');
 
   return (
     <main className="min-h-screen overflow-x-hidden" style={{ background: '#0e0e0e', color: '#fff' }}>
       <Starfield />
-      <FloatingNav active={active} />
+      <FloatingNav active={active} lang={lang} onToggle={toggleLang} />
       <div className="relative z-10 pt-20">
-        <HeroSection />
-        <ToolsSection />
-        <ExperienceSection />
-        <ProjectsSection />
-        <ContactSection />
-        <Footer />
+        <HeroSection lang={lang} />
+        <ToolsSection lang={lang} />
+        <ExperienceSection lang={lang} />
+        <ProjectsSection lang={lang} />
+        <ContactSection lang={lang} />
+        <Footer lang={lang} />
       </div>
-      <Dock />
+      <Dock lang={lang} />
     </main>
   );
 };
